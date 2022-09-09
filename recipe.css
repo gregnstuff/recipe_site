@@ -1,25 +1,58 @@
+* {
+    overflow: auto;
+}
+
 body {
-    background-color: #8BA1bb;
+    background-color: #8BA1BB;
     font-family: Arial;
     margin: 0;
 }
 
-div.content{
+div.content {
     background-color: white;
-    margin: 60px 10% 80px 10%;
-    padding: 0px 30px 30px 30px;
+    margin: 40px 8px 80px 8px;
+    padding: 0px 8px 20px 8px;
     min-width: 350px;
-    box-shadow: 1px 1px 13px 4px black;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
     overflow: visible;
 }
 
-h1{
+h1 {
     text-align: center;
-    margin-top: 25px;
-    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-bottom: 12px;
 }
 
-div.separator{
+p.description {
+    text-align: center;
+    max-width: 400px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.center {
+    text-align: center;
+    width: 100%;
+}
+
+div.category {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    overflow: visible;
+}
+
+p.category {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    margin-top: -15px;
+    margin-bottom: 0px;
+    padding: 8px 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+div.separator {
     height: 1px;
     width: 100px;
     background-color: black;
@@ -27,60 +60,34 @@ div.separator{
     margin-right: auto;
 }
 
-.center{
-    text-align: center;
-    width: 100%;
+
+div.info {
+    position:relative;
 }
 
-div.category{
-    margin-bottom: -18px;
-}
-
-p.category {
-    background-color: black;
-    color: white;
-    display: inline-block;
-    margin-top: -20px;
-    margin-bottom: 0px;
-    padding: 8px 20px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-p.description{
-    text-align: center;
-    max-width: 400px;
-    display: inline-block;
-    font-size: 14px;
-}
-
-div.info{
-    position: relative;"
-}
-
-table.info{
+table.info {
     position:absolute; 
     bottom:0; 
-    width: 100%; 
-    color:white; 
-    background-color: #6C829DC0; 
-    height: 80px;" 
+    width: 100%; color: white;
+    background-color: #6C829DC0;
+    height: 50px
 }
 
-table.info th{
-    vertical-align: bottom;
-    padding-bottom: 8px;
-    font-size: 16px;
-}
-
-table.info td{
+/* All the td of the table that has a info class */
+table.info td {
     text-align: center;
     vertical-align: top;
+    font-size: 12px;
+}
+
+table.info th {
+    vertical-align: bottom;
+    padding-bottom: 8px;
     font-size: 14px;
 }
 
-img.info{
-    display:block;
+img.info {
+    display: block;
     max-height: 400px;
     object-fit: cover;
     min-height: 200px;
@@ -88,7 +95,7 @@ img.info{
 }
 
 div.col {
-    width:45%;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -100,25 +107,24 @@ div.col h2 {
     padding-bottom: 5px;
 }
 
-div.col1{
+div.col1 {
     display: inline-block;
-    margin-right: 10%;
+    margin-bottom : 20px;
 }
 
-div.col2{
-    float:right;
+div.col2 {
 }
 
-div.ing p{
-    border: 1px solid lightgray;
-    font-size: 14px;
+div.ingredients p {
     text-align: center;
+    font-size: 14px;
+    border: 1px solid lightgray;
     padding: 8px 0;
     margin-top: 4px;
     margin-bottom: 0;
 }
 
-table.instructions p.number{
+table.instructions p.number {
     background-color: #6C829D;
     color: white;
     font-size: 14px;
@@ -132,18 +138,58 @@ table.instructions p.number{
     margin: 0;
 }
 
-table.instructions td{
+table.instructions td.instruction_step {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+table.instructions td {
     vertical-align: top;
 }
 
-table.instructions tr{
+table.instructions tr {
     height: 40px;
 }
 
-table.instructions td.instruction_step{
-    font-size: 14px;
-    padding-left: 10px;
-    padding-bottom: 10px;
+/*Desktops*/
+@media only screen and (min-width: 768px) {
+    div.content {
+        margin: 60px 10% 80px 10%;
+        padding: 0px 30px 30px 30px;
+        min-width: 350px;
+    }
 
+    table.info {
+        height: 80px
+    }
+
+    table.info td {
+        font-size: 14px;
+    }
+    
+    table.info th {
+        font-size: 16px;
+    }
+
+    div.col1 {
+        margin-right: 10%;
+    }
+    
+    div.col2 {
+        float: right;
+    }
+
+    div.col {
+        width: 45%;
+    }
 }
 
+/* Large screens */
+@media only screen and (min-width: 900px) {
+    div.content {
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 650px;
+    }
+}
